@@ -1,0 +1,10 @@
+global_costmap:
+  global_frame: map
+  robot_base_frame: odom 
+  update_frequency: 1.0
+  publish_frequency: 0.5
+  static_map: true
+  rolling_window: false
+  transform_tolerance: 1.0 
+  cost_scaling_factor: 5.0
+  infration_radius: 0.10
