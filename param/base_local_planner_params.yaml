@@ -9,8 +9,8 @@ TrajectoryPlannerROS:
   holonomic_robot: false
   yaw_goal_tolerance: 0.5
   xy_goal_tolerance: 0.1
-  pdist_scale: 2.0
-  gdist_scale: 0.8
+  pdist_scale: 4.0
+  gdist_scale: 1.0 
   occdist_scale: 0.05
   meter_scoring: true
   controller_patience: 30
