@@ -9,18 +9,18 @@ planner_patience: 1.0
 oscillation_timeout: 0.0
 oscillation_distance: 0.5
 
-clearing_rotation_allowed: False 
-clearing_go_forward_allowed: True
+#clearing_rotation_allowed: False 
+#clearing_go_forward_allowed: False 
 
-recovery_behaviors:
-  - name: 'conservative_reset'
-    type: 'clear_costmap_recovery/ClearCostmapRecovery'
-  - name: 'aggressive_reset'
-    type: 'clear_costmap_recovery/ClearCostmapRecovery'
-  - name: 'rotate_recovery'
-    type: 'rotate_recovery/RotateRecovery'
-  - name: 'go_forward_recovery'
-    type: 'go_forward_recovery/GoForwardRecovery'
+#recovery_behaviors:
+#  - name: 'conservative_reset'
+#    type: 'clear_costmap_recovery/ClearCostmapRecovery'
+#  - name: 'rotate_recovery'
+#    type: 'rotate_recovery/RotateRecovery'
+#  - name: 'go_forward_recovery'
+#    type: 'go_forward_recovery/GoForwardRecovery'
+#  - name: 'aggressive_reset'
+#    type: 'clear_costmap_recovery/ClearCostmapRecovery'
 
-#base_local_planner: "base_local_planner/TrajectoryPlannerROS"
-base_local_planner: "dwa_local_planner/DWAPlannerROS"
+base_local_planner: "base_local_planner/TrajectoryPlannerROS"
+#base_local_planner: "dwa_local_planner/DWAPlannerROS"
