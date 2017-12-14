@@ -1,7 +1,9 @@
 #!/usr/bin/env python
-import sys, rospy, math, tf
+#encoding: utf8
+import sys, rospy, math, tf, time
 from pimouse_ros.msg import MotorFreqs
 from geometry_msgs.msg import Twist, Quaternion, TransformStamped, Point
+from sensor_msgs.msg import Imu
 from std_srvs.srv import Trigger, TriggerResponse
 from pimouse_ros.srv import TimedMotion
 from nav_msgs.msg import Odometry
@@ -13,6 +15,7 @@ class Motor():
         rospy.on_shutdown(self.set_power)
         self.sub_raw = rospy.Subscriber('motor_raw', MotorFreqs, self.callback_raw_freq)
         self.sub_cmd_vel = rospy.Subscriber('cmd_vel', Twist, self.callback_cmd_vel)
+        self.sub_imu = rospy.Subscriber('imu/data_raw', Imu, self.callback_imu)
         self.srv_on = rospy.Service('motor_on', Trigger, self.callback_on)
         self.srv_off = rospy.Service('motor_off', Trigger, self.callback_off)
         self.srv_tm = rospy.Service('timed_motion', TimedMotion, self.callback_tm)
@@ -73,6 +76,9 @@ class Motor():
         #self.using_cmd_vel = True
         #self.last_time = rospy.Time.now()
 
+    def callback_imu(self, message):
+
+
     def callback_on(self, message): return self.onoff_response(True)
     def callback_off(self, message): return self.onoff_response(False)
 
@@ -93,6 +99,7 @@ class Motor():
         return True
 
     def send_odom(self):
+        start = time.time()
         self.cur_time = rospy.Time.now()
 
         dt = self.cur_time.to_sec() - self.last_time.to_sec()
@@ -101,12 +108,12 @@ class Motor():
         self.th += self.vth * dt
 
         q = tf.transformations.quaternion_from_euler(0, 0, self.th)
-        self.bc_odom.sendTransform((self.x, self.y, 0.0), q, self.cur_time, "base_frame", "odom")
+        self.bc_odom.sendTransform((self.x, self.y, 0.0), q, self.cur_time, "base_link", "odom")
 
         odom = Odometry()
         odom.header.stamp = self.cur_time
         odom.header.frame_id = "odom"
-        odom.child_frame_id = "base_frame"
+        odom.child_frame_id = "base_link"
 
         odom.pose.pose.position = Point(self.x, self.y, 0)
         odom.pose.pose.orientation = Quaternion(*q)
@@ -118,6 +125,7 @@ class Motor():
         self.pub_odom.publish(odom)
 
         self.last_time = self.cur_time
+        rospy.loginfo("odom_time: {}".format(time.time()-start))
 
 if __name__ == '__main__':
     rospy.init_node('motors')
