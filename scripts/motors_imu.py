@@ -68,7 +68,7 @@ class Motor():
         if not self.is_on:
             return
         self.vx = message.linear.x
-        self.vth = message.angular.z
+        #self.vth = message.angular.z
 
         forward_hz = 80000.0*message.linear.x/(9*math.pi)
         rot_hz = 400.0*message.angular.z/math.pi
@@ -77,6 +77,9 @@ class Motor():
         #self.last_time = rospy.Time.now()
 
     def callback_imu(self, message):
+        if not self.is_on:
+            return
+        self.vth = message.angular_velocity.x
 
 
     def callback_on(self, message): return self.onoff_response(True)
