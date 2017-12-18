@@ -80,8 +80,7 @@ class Motor():
         #if not self.is_on:
         #    return
         self.vth = math.degrees(message.angular_velocity.z)
-        #rospy.loginfo("vth: {}".format(self.vth))
-
+        rospy.loginfo("vth: {}".format(self.vth))
 
     def callback_on(self, message): return self.onoff_response(True)
     def callback_off(self, message): return self.onoff_response(False)
