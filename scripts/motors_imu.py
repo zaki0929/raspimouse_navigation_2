@@ -27,6 +27,7 @@ class Motor():
 
         self.x, self.y, self.th = 0.0, 0.0, 0.0
         self.vx, self.vth = 0.0, 0.0
+        self.imu_offset = -0.025 
         
         self.cur_time = rospy.Time.now()
         self.last_time = self.cur_time
@@ -79,8 +80,8 @@ class Motor():
     def callback_imu(self, message):
         #if not self.is_on:
         #    return
-        self.vth = math.degrees(message.angular_velocity.z)
-        rospy.loginfo("vth: {}".format(self.vth))
+        self.vth = math.degrees(message.angular_velocity.z) - self.imu_offset
+        #rospy.loginfo("vth: {}".format(self.vth))
 
     def callback_on(self, message): return self.onoff_response(True)
     def callback_off(self, message): return self.onoff_response(False)
