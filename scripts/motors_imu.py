@@ -27,7 +27,7 @@ class Motor():
 
         self.x, self.y, self.th = 0.0, 0.0, 0.0
         self.vx, self.vth = 0.0, 0.0
-        self.imu_offset = -0.025 
+        self.imu_offset = -0.027
         
         self.cur_time = rospy.Time.now()
         self.last_time = self.cur_time
@@ -129,8 +129,8 @@ class Motor():
         self.pub_odom.publish(odom)
 
         self.last_time = self.cur_time
-        rospy.loginfo("odom_time: {}".format(time.time()-start))
-        rospy.loginfo("th: {}".format(self.th))
+        #rospy.loginfo("odom_time: {}".format(time.time()-start))
+        #rospy.loginfo("th: {}".format(self.th))
 
 if __name__ == '__main__':
     rospy.init_node('motors')
