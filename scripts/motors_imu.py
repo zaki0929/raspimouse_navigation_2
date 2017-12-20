@@ -27,7 +27,9 @@ class Motor():
 
         self.x, self.y, self.th = 0.0, 0.0, 0.0
         self.vx, self.vth = 0.0, 0.0
-        self.imu_offset = -0.027
+
+        rospy.set_param('imu_offset', -0.027)
+        self.imu_offset = rospy.get_param('imu_offset')
         
         self.cur_time = rospy.Time.now()
         self.last_time = self.cur_time

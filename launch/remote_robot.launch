@@ -1,6 +1,5 @@
 <launch>
   <node pkg="raspimouse_navigation_2" name="enable_motors" type="enable_motors.py" required="true"/>
-  <!-- <node pkg="pimouse_slam" name="motors" type="motors.py" required="true"/> -->
   <node pkg="raspimouse_navigation_2" name="motors_imu" type="motors_imu.py" required="true" output="screen"/>
   <node pkg="lab_usb_9axisimu_driver" name="lab_usb_9axisimu_driver" type="lab_usb_9axisimu_driver" required="true"/>
   <node pkg="urg_node" name="urg_node" type="urg_node" required="true">
