@@ -4,7 +4,7 @@ controller_frequency: 10
 controller_patience: 15.0
 
 planner_frequency: 10
-planner_patience: 1.0
+planner_patience: 60
 
 oscillation_timeout: 0.0
 oscillation_distance: 0.5
