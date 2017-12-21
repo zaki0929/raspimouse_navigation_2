@@ -38,5 +38,17 @@ cd ~/catkin_ws && catkin_make && source ~/catkin_ws/devel/setup.bash
 
 # Usage
 
-It will be appended soon.
+In order to use this package, you need to launch the launch file on Raspberry Pi Mouse side and PC side as follows.
+
+## Raspberry Pi Mouse side
+
+```
+roslaunch raspimouse_navigation_2 remote_robot.launch
+```
+
+## PC side
+
+```
+roslaunch raspimouse_navigation_2 remote_desktop.launch
+```
 
