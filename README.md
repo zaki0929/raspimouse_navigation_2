@@ -1,5 +1,5 @@
 # raspimouse_navigation_2
-Package for implement navigation with IMU, expansion resettings, and original recovery behaviors on Raspberry Pi Mouse
+Package for implement navigation with IMU, expansion resettings, and original recovery behaviors on Raspberry Pi Mouse.
 
 
 # Requirements
