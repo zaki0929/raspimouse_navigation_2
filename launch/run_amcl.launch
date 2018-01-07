@@ -33,7 +33,7 @@
     <param name="transform_tolerance" value="0.1"/>
     <param name="recovery_alpha_slow" value="0.0"/>
     <param name="recovery_alpha_fast" value="0.0"/>
-    <param name="reset_th_alpha" value="2.5"/>
-    <param name="reset_th_cov" value="0.05"/>
+    <param name="reset_th_alpha" value="3.0"/>
+    <param name="reset_th_cov" value="0.5"/>
   </node>
 </launch>
