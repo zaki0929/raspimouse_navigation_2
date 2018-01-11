@@ -34,6 +34,6 @@
     <param name="recovery_alpha_slow" value="0.0"/>
     <param name="recovery_alpha_fast" value="0.0"/>
     <param name="reset_th_alpha" value="3.0"/>
-    <param name="reset_th_cov" value="0.5"/>
+    <param name="reset_th_cov" value="0.1"/>
   </node>
 </launch>
