@@ -13,27 +13,29 @@ This package requires the following to run:
 * ROS Package
   * Customized ROS Navigation Stack - [zaki0929/navigation](https://github.com/zaki0929/navigation)
   * IMU Driver - [AtsushiSaito/lab_usb_9axisimu_driver](https://github.com/AtsushiSaito/lab_usb_9axisimu_driver)
+  * urg_node - [urg_node - ROS WiKi](http://wiki.ros.org/urg_node)
 
 # Installation
 
 First of all, install the latest stable version of ROS.
 Please refer to [ROS WiKi](http://wiki.ros.org/kinetic/Installation) for installation.
 
-Next, download the dependent ROS package into `~/catkin_ws/src` and build it.
+Next, download the dependent ROS package and this repository.
 
 ```
+sudo apt install ros-kinetic-urg-node
 cd ~/catkin_ws/src
 git clone https://github.com/zaki0929/navigation.git
 git clone https://github.com/AtsushiSaito/lab_usb_9axisimu_driver.git
-cd ~/catkin_ws && catkin_make && source ~/catkin_ws/devel/setup.bash
-```
-
-Finally, download this repository and build it.
-
-```
-cd ~/catkin_ws/src
 git clone https://github.com/zaki0929/raspimouse_navigation_2.git
-cd ~/catkin_ws && catkin_make && source ~/catkin_ws/devel/setup.bash
+```
+
+Finally, build the downloaded ones.
+
+```
+cd ~/catkin_ws
+catkin_make
+source ~/catkin_ws/devel/setup.bash
 ```
 
 # Usage
