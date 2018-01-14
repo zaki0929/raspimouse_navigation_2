@@ -61,3 +61,5 @@ roslaunch raspimouse_navigation_2 remote_robot.launch
 roslaunch raspimouse_navigation_2 remote_desktop.launch
 ```
 
+## License
+This repository is licensed under the MIT license, see [LICENSE](./LICENSE).
