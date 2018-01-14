@@ -1,8 +1,10 @@
 # raspimouse_navigation_2
 Package for implement navigation with IMU, expansion resettings, and original recovery behaviors on Raspberry Pi Mouse.
 
+## Demo
+* [Raspberry Pi Mouse solves kidnapped robot problem using ROS navigation stack - YouTube](https://youtu.be/ZaB9VDrkW28)
 
-# Requirements
+## Requirements
 
 This package requires the following to run:
 
@@ -15,7 +17,7 @@ This package requires the following to run:
   * IMU Driver - [AtsushiSaito/lab_usb_9axisimu_driver](https://github.com/AtsushiSaito/lab_usb_9axisimu_driver)
   * urg_node - [urg_node - ROS WiKi](http://wiki.ros.org/urg_node)
 
-# Installation
+## Installation
 
 First of all, install the latest stable version of ROS.
 Please refer to [ROS WiKi](http://wiki.ros.org/kinetic/Installation) for installation.
@@ -38,17 +40,17 @@ catkin_make
 source ~/catkin_ws/devel/setup.bash
 ```
 
-# Usage
+## Usage
 
 In order to use this package, you need to launch the launch file on Raspberry Pi Mouse side and PC side as follows.
 
-## Raspberry Pi Mouse side
+### Raspberry Pi Mouse side
 
 ```
 roslaunch raspimouse_navigation_2 remote_robot.launch
 ```
 
-## PC side
+### PC side
 
 ```
 roslaunch raspimouse_navigation_2 remote_desktop.launch
