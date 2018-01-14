@@ -7,9 +7,12 @@ Package for implement navigation with IMU, expansion resettings, and original re
 ## Requirements
 
 This package requires the following to run:
-* Raspberry Pi Mouse
-* Laser Rangefinder - URG-04LX-UG01
-* IMU - RT-USB-9AXIS-00
+* Robot
+  * Raspberry Pi Mouse
+* Laser Rangefinder
+  * URG-04LX-UG01
+* IMU
+  * RT-USB-9AXIS-00
 * Ubuntu
   * Ubuntu 16.04 (Ubuntu 16.04 Server recomended)
 * ROS
