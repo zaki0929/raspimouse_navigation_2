@@ -49,6 +49,8 @@ source ~/catkin_ws/devel/setup.bash
 
 In order to use this package, you need to launch the launch file on Raspberry Pi Mouse side and PC side as follows.
 
+The map data you want to load is placed in [map](./map).
+
 ### Raspberry Pi Mouse side
 
 ```
